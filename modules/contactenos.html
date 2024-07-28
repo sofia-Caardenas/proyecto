@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctenos - Cafésena</title>
+    <style>
+        /* Reset de márgenes y paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F5F5DC; /* Crema */
+            color: #5D3A1A; /* Marrón oscuro */
+        }
+
+        header {
+            background-color: #5D3A1A; /* Marrón oscuro */
+            padding: 10px 20px;
+            color: #F5F5DC; /* Crema */
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .contact-section {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-section h2 {
+            font-size: 24px;
+            color: #5D3A1A; /* Marrón oscuro */
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            background-color: #FFF;
+            padding: 20px;
+            border: 1px solid #D2B48C; /* Marrón claro */
+            border-radius: 5px;
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #D2B48C; /* Marrón claro */
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .contact-form button {
+            background-color: #8B4513; /* Marrón oscuro */
+            color: #FFF;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .contact-form button:hover {
+            background-color: #5D3A1A; /* Marrón más oscuro */
+        }
+
+        footer {
+            background-color: #5D3A1A; /* Marrón oscuro */
+            color: #F5F5DC; /* Crema */
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cafésena</h1>
+    </header>
+
+    <section class="contact-section">
+        <h2>Contáctenos</h2>
+        <p>Estamos aquí para ayudarte. Si tienes alguna pregunta, no dudes en ponerte en contacto con nosotros.</p>
+        <div class="contact-form">
+            <form action="#" method="post">
+                <input type="text" name="nombre" placeholder="Nombre Completo" required>
+                <input type="email" name="email" placeholder="Correo Electrónico" required>
+                <textarea name="mensaje" rows="5" placeholder="Tu Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Cafésena. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

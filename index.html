@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafsena ♥</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #5D3A1A; 
+            background-color: #F5F5DC;
+        }
+
+        .header {
+            background-color: #F5F5DC; 
+            border-bottom: 1px solid #D2B48C; 
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        #menu {
+            display: none;
+        }
+
+        #menu:checked + .navbar {
+            display: block;
+        }
+
+        .menu-icono {
+            width: 30px;
+            cursor: pointer;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar li {
+            margin: 0 15px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #5D3A1A; 
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #8B4513; 
+        }
+
+        .slider {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .slider-controler {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .slider-controler a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            margin: 0 5px;
+        }
+
+        .header-content {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .header-content h1 {
+            font-size: 48px;
+            margin: 0 0 20px;
+            color: #5D3A1A; 
+        }
+
+        .header-content p {
+            font-size: 18px;
+            margin: 0 0 20px;
+        }
+
+        .btn-1 {
+            display: inline-block;
+            background-color: #8B4513; 
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .btn-1:hover {
+            background-color: #5D3A1A; 
+        }
+
+        .section {
+            padding: 50px 20px;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            color: #5D3A1A; 
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            background-color: #5D3A1A; 
+            color: #F5F5DC; 
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .footer-content .link {
+            margin: 0 20px;
+        }
+
+        .footer-content h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-content ul {
+            list-style: none;
+        }
+
+        .footer-content ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-content ul li a {
+            text-decoration: none;
+            color: #F5F5DC;  
+        }
+
+        .footer-content ul li a:hover {
+            color: #D2B48C; 
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                display: none;
+            }
+
+            #menu:checked + .navbar {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: #F5F5DC; 
+                border-bottom: 1px solid #D2B48C;
+            }
+
+            .navbar ul {
+                flex-direction: column;
+            }
+
+            .navbar li {
+                margin: 10px 0;
+            }
+
+            .menu-icono {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="menu">
+            <a href="#" class="logo"><img src="img/image-removebg-preview (9).png" alt="Logo Cafésena"></a>
+            <label for="menu">
+        </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#Inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="Modules/contactenos.html">Contáctenos</a></li>
+                    <li><a href="Modules/login.html">Ingresar</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <img src="img/ky9pl1c15lm6wj.jpg" alt="Slide 1">
+                    <p class="caption">¡Bienvenidos a Cafésena!</p>
+                </div>
+                <div class="slide">
+                    <img src="img/images.jpg" alt="Slide 2">
+                    <p class="caption">Disfruta de nuestros cafés y más.</p>
+                </div>
+            </div>
+            <div class="slider-controler">
+                <a href="#slide1">&bullet;</a>
+                <a href="#slide2">&bullet;</a>
+            </div>
+        </div>
+
+        <div class="header-content">
+            <h1>Cafésena</h1>
+            <p>En Cafésena, ofrecemos una experiencia única con nuestros exquisitos cafés y un ambiente acogedor. ¡Descubre lo mejor de nuestro menú!</p>
+            <a href="#informacion" class="btn-1">Información</a>
+        </div>
+    </header>
+
+    <section class="section" id="nosotros">
+        <h2>Sobre Nosotros</h2>
+        <p>En Cafésena, nos dedicamos a ofrecer una experiencia inolvidable a nuestros clientes con un servicio amigable y productos de la más alta calidad. Ven y disfruta de un ambiente relajado mientras saboreas nuestras delicias.</p>
+        <a href="domicilios/Modules/nosotros.php" class="btn-1">Conoce más acerca de nosotros</a>
+    </section>
+
+    <section class="section" id="servicios">
+        <h2>Servicios</h2>
+        <div class="servicios-group">
+            <div class="servicios-1">
+                <img src="domicilios/Resources/img/7.png" alt="Servicio 1">
+                <h3>Servicio 1</h3>
+            </div>
+            <div class="servicios-1">
+                <img src="domicilios/Resources/img/5.png" alt="Servicio 2">
+                <h3>Servicio 2</h3

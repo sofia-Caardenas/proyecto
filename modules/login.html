@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('../img/wooden-table-with-blurred-restaurant-scene.jpg');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #8e6e50;
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: white;
+        }
+        .login-container label {
+            display: block;
+            margin: 10px 0 5px;
+            color: white;
+        }
+        .login-container input, .login-container select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            background-color: #ffffff80;
+            color: #333;
+        }
+        .login-container button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            background-color: #ab6b34;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .login-container button:hover {
+            background-color: #362511;
+        }
+        .login-container a {
+            display: block;
+            margin-top: 10px;
+            color: white;
+            text-decoration: none;
+        }
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+        .volver {
+            margin-top: 20px;
+            color: white;
+            text-decoration: none;
+        }
+        .volver:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Bienvenido</h2>
+        <form action="mantenimiento.html" method="get">
+            <label for="username">Usuario</label>
+            <input type="text" id="username" name="username" placeholder="Usuario" required>
+            
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required>
+
+            <label for="role">Rol</label>
+            <select id="role" name="role" required>
+                <option value="admin">cliente</option>
+                <option value="user">empleado</option>
+            </select>
+            
+            <a href="mantenimiento.html">login</a>
+        </form>
+        <a href="registro.html">¿No tienes Cuenta? Regístrate</a>
+        <a class="volver" href="../index.html">Volver</a>
+    </div>
+</body>
+</html>
