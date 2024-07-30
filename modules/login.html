@@ -76,7 +76,7 @@
 <body>
     <div class="login-container">
         <h2>Bienvenido</h2>
-        <form action="mantenimiento.html" method="get">
+        <form id="loginForm">
             <label for="username">Usuario</label>
             <input type="text" id="username" name="username" placeholder="Usuario" required>
             
@@ -85,14 +85,26 @@
 
             <label for="role">Rol</label>
             <select id="role" name="role" required>
-                <option value="admin">cliente</option>
-                <option value="user">empleado</option>
+                <option value="cliente">Cliente</option>
+                <option value="empleado">Empleado</option>
             </select>
             
-            <a href="mantenimiento.html">login</a>
+            <button type="submit">Login</button>
         </form>
         <a href="registro.html">¿No tienes Cuenta? Regístrate</a>
         <a class="volver" href="../index.html">Volver</a>
     </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const role = document.getElementById('role').value;
+            if (role === 'cliente') {
+                window.location.href = 'cliente.html';
+            } else if (role === 'empleado') {
+                window.location.href = 'empleado.html';
+            }
+        });
+    </script>
 </body>
 </html>

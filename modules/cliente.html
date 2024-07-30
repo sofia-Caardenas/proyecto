@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente - Cafetería</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            background-image: url('https://www.example.com/path/to/background-image.jpg');
+            background-size: cover;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #4b2e1e;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+        .logo {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+        }
+        .header-title {
+            font-size: 24px;
+            margin: 0;
+        }
+        .logout-button {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #7a5230;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .logout-button:hover {
+            background-color: #573d2d;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            flex: 1;
+        }
+        nav {
+            background-color: #7a5230;
+            width: 250px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin-bottom: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #573d2d;
+            border-radius: 5px;
+        }
+        #content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            flex: 1;
+        }
+        h1, h2 {
+            color: #8b6652;
+        }
+        ul.menu-list {
+            list-style: none;
+            padding: 0;
+        }
+        ul.menu-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        ul.menu-list li:hover {
+            transform: scale(1.02);
+        }
+        ul.menu-list img {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+        ul.menu-list div {
+            flex: 1;
+        }
+        ul.menu-list h3 {
+            margin: 0;
+            color: #7a5230;
+        }
+        ul.menu-list p {
+            margin: 5px 0;
+            color: #4b2e1e;
+        }
+        ul.menu-list span {
+            font-weight: bold;
+            color: #4b2e1e;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+            color: #4b2e1e;
+        }
+        input, select, button {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background-color: #7a5230;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #573d2d;
+        }
+        .profile {
+            background-color: #fff8f0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+        .profile h2 {
+            margin-top: 0;
+        }
+        .profile p {
+            margin: 5px 0;
+        }
+        footer {
+            background-color: #4b2e1e;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+        @media screen and (max-width: 768px) {
+            nav {
+                width: 100%;
+                height: auto;
+                padding: 10px;
+            }
+            nav ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .container {
+                flex-direction: column;
+            }
+            #content {
+                margin: 20px 0;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1 class="header-title">Cafésena</h1>
+        </div>
+        <button class="logout-button" onclick="logout()">Cerrar Sesión</button>
+    </header>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showProfile(); return false;">Perfil de Usuario</a></li>
+                <li><a href="#" onclick="showMenu(); return false;">Ver Menú</a></li>
+                <li><a href="#" onclick="placeOrder(); return false;">Realizar Pedido</a></li>
+                <li><a href="#" onclick="checkOrderStatus(); return false;">Estado del Pedido</a></li>
+            </ul>
+        </nav>
+        <div id="content">
+            <!-- Contenido dinámico se cargará aquí -->
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Cafésena. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function showProfile() {
+            const profileContent = `
+                <div class="profile">
+                    <h2>Perfil de Usuario</h2>
+                    <p><strong>Nombre:</strong> Juan Pérez</p>
+                    <p><strong>Email:</strong> juan.perez@example.com</p>
+                    <p><strong>Teléfono:</strong> 123-456-7890</p>
+                    <button onclick="editProfile()">Editar Perfil</button>
+                </div>
+            `;
+            document.getElementById('content').innerHTML = profileContent;
+        }
+
+        function editProfile() {
+            const editProfileContent = `
+                <div class="profile">
+                    <h2>Editar Perfil</h2>
+                    <form id="editProfileForm">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" value="Juan Pérez" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" value="juan.perez@example.com" required>
+                        <label for="phone">Teléfono:</label>
+                        <input type="tel" id="phone" name="phone" value="123-456-7890" required>
+                        <button type="submit">Guardar Cambios</button>
+                    </form>
+                </div>
+            `;
+            document.getElementById('content').innerHTML = editProfileContent;
+
+            document.getElementById('editProfileForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                showProfile();
+            });
+        }
+
+        function showMenu() {
+            const menuContent = `
+                <h2>Menú</h2>
+                <ul class="menu-list">
+                    <li>
+                        <img src="img/descarga (14).jpg" alt="Café Americano">
+                        <div>
+                            <h3>Café Americano</h3>
+                            <p>Delicioso café americano hecho con granos seleccionados.</p>
+                            <span>$2.00</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="img/descarga (13).jpg" alt="Café Latte">
+                        <div>
+                            <h3>Café Latte</h3>
+                            <p>Un suave y cremoso café latte para cualquier momento del día.</p>
+                            <span>$3.50</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="img/descarga (12).png" alt="Capuchino">
+                        <div>
+                            <h3>Capuchino</h3>
+                            <p>Espuma cremosa y café intenso, una combinación perfecta.</p>
+                            <span>$4.00</span>
+                        </div>
+                    </li>
+                </ul>
+            `;
+            document.getElementById('content').innerHTML = menuContent;
+        }
+
+        function placeOrder() {
+            const orderContent = `
+                <h2>Realizar Pedido</h2>
+                <form>
+                    <label for="item">Selecciona un producto:</label>
+                    <select id="item" name="item" required>
+                        <option value="americano">Café Americano</option>
+                        <option value="latte">Café Latte</option>
+                        <option value="capuchino">Capuchino</option>
+                    </select>
+                    <label for="quantity">Cantidad:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                    <button type="submit">Realizar Pedido</button>
+                </form>
+            `;
+            document.getElementById('content').innerHTML = orderContent;
+        }
+
+        function checkOrderStatus() {
+            const statusContent = `
+                <h2>Estado del Pedido</h2>
+                <p>Actualmente no tienes pedidos en curso.</p>
+            `;
+            document.getElementById('content').innerHTML = statusContent;
+        }
+
+        function logout() {
+            alert('Sesión cerrada');
+            window.location.href = '../index.html'; // Redirige a la página index.html en el directorio superior
+        }
+    </script>
+</body>
+</html>
