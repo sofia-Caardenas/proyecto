@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../../img/barista-pouring-syrup-into-layered-latte.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+.registro-container {
+    background-color: #8d623f;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.registro-container h2 {
+    margin-bottom: 20px;
+}
+
+.registro-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registro-container label {
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+.registro-container input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.registro-container button {
+    padding: 10px;
+    background-color: #392b15;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.registro-container button:hover {
+    background-color: #35260f;
+}
+
+.registro-container a.volver {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.registro-container a.volver:hover {
+    color: #fce7ca;
+}
