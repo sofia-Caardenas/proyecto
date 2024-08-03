@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url('../../img/wooden-table-with-blurred-restaurant-scene.jpg');
+    background-image: url('../img/wooden-table-with-blurred-restaurant-scene.jpg');
     background-size: cover;
     display: flex;
     justify-content: center;
